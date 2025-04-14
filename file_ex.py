@@ -26,17 +26,17 @@ for word in words:
 # for word, count in word_count.items():
 #     outfile.write(f"{word}:{count}\n")
 
-outfile = open('D:\\input2.txt','w')     
-for word in sorted(word_count.keys()):    #sorted로 오름차순 정리
-    count = word_count[word]
-    outfile.write(f"{word}:{count}\n")
+# outfile = open('D:\\input2.txt','w')     
+# for word in sorted(word_count.keys()):    #sorted로 오름차순 정리
+#     count = word_count[word]
+#     outfile.write(f"{word}:{count}\n")
 
 
 #등장 횟수 기준으로 정렬 시 
-# outfile = open('D:\\input2.txt','w')     
-# for word,count in sorted(word_count.items(), key=lambda x:x[1],reverse=True):   
-#     count = word_count[word]
-#     outfile.write(f"{word}:{count}\n")
+outfile = open('D:\\input2.txt','w')     
+for word,count in sorted(word_count.items(), key=lambda x:x[1],reverse=True):   
+    count = word_count[word]
+    outfile.write(f"{word}:{count}\n")
 
 
 outfile.close()
