@@ -1,3 +1,4 @@
+
 import random
 
 random.seed(10)   #몇 번을 돌려도 동일한 결과 도출
