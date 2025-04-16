@@ -46,3 +46,22 @@ last_row_index = number_of_rows -1 #전체 행 개수에서 -1하여 마지막 �
 print(df.loc[last_row_index])  #마지막 행 데이터 추출 / 세로로 뜨며 행번호는 뜨지 않음
 
 print(df.tail(n=1))    #tail메소드로 마지막 행 데이터 추출 가능 / 가로로 뜨며 행번호와 함께 보여줌
+
+df.loc[:,['year']]      #'year'열의 : 모든 행 데이터 / iloc속성에 열 이름을 사용하면 오류 발생
+print("*    *   *   *   *  \n*  *   *   *   *")
+
+small_range = list(range(5))    #0이상 5미만 정수 반환
+print(small_range)
+subset1 = df.iloc[:, small_range]   #범위에 맞는 열을 df에서 추출
+print(subset1)                  #하지만 range를 쓸 경우 리스트로 변환해야하기 때문에 번거로움
+
+print("*    *   *   *   *  \n*  *   *   *   *")
+
+#슬라이싱 구문 활용
+subset2 = df.iloc[:, :5]        #간편하게 range(5)똑같이 출력 가능
+subset3 = df.iloc[:, 0:6:2]     #0이상 6미만 2간격으로 0,2,4 열 추출
+
+df.iloc[[0,99,999], [0,3,5]]   #1,4,6 열의 1,100,1000번째 행 데이터 추출 iloc이라 정수 쓰기
+df.loc[[0,99,999], ['country', 'lifeExp','gdpPercap']]  #위와 동일하게 추출 loc를 썼기 때문에 문자열 입력
+
+
