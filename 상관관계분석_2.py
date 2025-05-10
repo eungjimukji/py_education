@@ -11,16 +11,19 @@ df3 = pd.DataFrame(data3)
 # print(df3)  데이터프레임 확인
 
 
-# 피어슨
+# 피어슨 ) 
+#           일반적인 상관분석 방법 / 선형관계를 측정 / Outer에 민감하게 반응
 pearsonCoef = df3.corr(method='pearson')
 print(pearsonCoef)  
 print('----------*----------')
-# 스피어만
+# 스피어만 ) 
+#           두 변수가 정규성을 보이지 않을 때 사용하기 적합한 방법 / 선형여부 x 변수 간의 단조 연관성을 측정
 spearmanCoef = df3.corr(method='spearman')
 print(spearmanCoef)
 print('----------*----------')
 
-# 켄달
+# 켄달 ) 
+#           순위로 표현할 수 있는 data or 표본 크기가 작거나 동점!!!이 많을 때 활용
 kendallCoef = df3.corr(method='kendall')
 print(kendallCoef)
 
@@ -42,3 +45,6 @@ print(kendallCoef)
 # engReading        0.618284    1.000000  0.750568  0.679366
 # engClass          0.563621    0.750568  1.000000  0.584898
 # engScore          0.963624    0.679366  0.584898  1.000000
+
+# 켄달은 두 변수 간의 순위를 비교하여 연관성을 계산함.
+# 즉, 한 변수가 증가할 때 다른 변수가 함께 증가하는 횟수와 감소하는 횟수를 측정하여 횟수의 차이를 상관계수로 표현하는 방법
